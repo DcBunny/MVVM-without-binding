@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol HomeListViewDelegate
+{
+    func homeList(homeList: HomeListView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+}
+
 class HomeListView: UIView, UITableViewDataSource, UITableViewDelegate
 {
     var listTable = UITableView()
     
     var viewModel: HomeListViewModel?
+    
+    var delegate: HomeListViewDelegate?
     
     func setupContentView() {
         addSubview(listTable)
@@ -54,6 +61,8 @@ class HomeListView: UIView, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        delegate?.homeList(self, didSelectRowAtIndexPath: indexPath)
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

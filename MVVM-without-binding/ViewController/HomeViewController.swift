@@ -11,7 +11,7 @@ import SnapKit
 
 private let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
 
-class HomeViewController: UIViewController
+class HomeViewController: UIViewController, HomeListViewDelegate
 {
     var homeBannerView = HomeBannerView()
     var homeInfoView = HomeInfoView()
@@ -29,6 +29,7 @@ class HomeViewController: UIViewController
         setupContentView()
         layoutContentView()
         setupContentViewEvent()
+        setupContentViewDelegate()
         
         renderSubjectView()
     }
@@ -64,6 +65,10 @@ class HomeViewController: UIViewController
         }
     }
     
+    func setupContentViewDelegate() {
+        homeListView.delegate = self
+    }
+    
     func renderSubjectView() {
         homeBannerViewModel = HomeBannerViewModel() // 实际上应该从Data Controller获取数据
         homeBannerView.bindDataWithViewModel(homeBannerViewModel!)
@@ -73,5 +78,9 @@ class HomeViewController: UIViewController
         
         homeListViewModel = HomeListViewModel()
         homeListView.bindDataWithViewModel(homeListViewModel!)
+    }
+    
+    func homeList(homeList: HomeListView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("press at row \(indexPath.row)")
     }
 }
