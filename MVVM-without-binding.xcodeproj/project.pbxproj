@@ -17,6 +17,9 @@
 		81BF72451C8679AE00E3C3A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BF723C1C8679AE00E3C3A7 /* HomeViewController.swift */; };
 		81BF72461C8679AE00E3C3A7 /* HomeBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BF723E1C8679AE00E3C3A7 /* HomeBannerViewModel.swift */; };
 		81BF72471C8679AE00E3C3A7 /* HomeInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BF723F1C8679AE00E3C3A7 /* HomeInfoViewModel.swift */; };
+		81BF724A1C86D08B00E3C3A7 /* HomeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BF72491C86D08B00E3C3A7 /* HomeListViewModel.swift */; };
+		81BF724C1C86D49400E3C3A7 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BF724B1C86D49400E3C3A7 /* ListCell.swift */; };
+		81BF724E1C86DD6500E3C3A7 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BF724D1C86DD6500E3C3A7 /* ListCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		81BF723C1C8679AE00E3C3A7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		81BF723E1C8679AE00E3C3A7 /* HomeBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBannerViewModel.swift; sourceTree = "<group>"; };
 		81BF723F1C8679AE00E3C3A7 /* HomeInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInfoViewModel.swift; sourceTree = "<group>"; };
+		81BF72491C86D08B00E3C3A7 /* HomeListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeListViewModel.swift; sourceTree = "<group>"; };
+		81BF724B1C86D49400E3C3A7 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		81BF724D1C86DD6500E3C3A7 /* ListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
 		A003742012199D5FE584E3D3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,12 +83,12 @@
 		81BF720A1C86776000E3C3A7 /* MVVM-without-binding */ = {
 			isa = PBXGroup;
 			children = (
-				81BF72331C8679AE00E3C3A7 /* AppDelegate */,
-				81BF72351C8679AE00E3C3A7 /* DataController */,
-				81BF72371C8679AE00E3C3A7 /* View */,
 				81BF723B1C8679AE00E3C3A7 /* ViewController */,
+				81BF72351C8679AE00E3C3A7 /* DataController */,
 				81BF723D1C8679AE00E3C3A7 /* ViewModel */,
+				81BF72371C8679AE00E3C3A7 /* View */,
 				81BF72121C86776100E3C3A7 /* Assets.xcassets */,
+				81BF72331C8679AE00E3C3A7 /* AppDelegate */,
 				81BF72481C8679E600E3C3A7 /* Supporting Files */,
 			);
 			path = "MVVM-without-binding";
@@ -110,6 +116,7 @@
 				81BF72381C8679AE00E3C3A7 /* HomeBannerView.swift */,
 				81BF72391C8679AE00E3C3A7 /* HomeInfoView.swift */,
 				81BF723A1C8679AE00E3C3A7 /* HomeListView.swift */,
+				81BF724B1C86D49400E3C3A7 /* ListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +134,8 @@
 			children = (
 				81BF723E1C8679AE00E3C3A7 /* HomeBannerViewModel.swift */,
 				81BF723F1C8679AE00E3C3A7 /* HomeInfoViewModel.swift */,
+				81BF72491C86D08B00E3C3A7 /* HomeListViewModel.swift */,
+				81BF724D1C86DD6500E3C3A7 /* ListCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -268,8 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BF724A1C86D08B00E3C3A7 /* HomeListViewModel.swift in Sources */,
 				81BF72401C8679AE00E3C3A7 /* AppDelegate.swift in Sources */,
 				81BF72441C8679AE00E3C3A7 /* HomeListView.swift in Sources */,
+				81BF724E1C86DD6500E3C3A7 /* ListCellViewModel.swift in Sources */,
+				81BF724C1C86D49400E3C3A7 /* ListCell.swift in Sources */,
 				81BF72451C8679AE00E3C3A7 /* HomeViewController.swift in Sources */,
 				81BF72421C8679AE00E3C3A7 /* HomeBannerView.swift in Sources */,
 				81BF72411C8679AE00E3C3A7 /* HomeDataController.swift in Sources */,

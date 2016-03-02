@@ -13,7 +13,9 @@ class HomeInfoView: UIView
     var infoLabel = UILabel()
     var changeBtn = UIButton()
     
-    var viewModel = HomeInfoViewModel()
+    var viewModel: HomeInfoViewModel?
+    
+    var eventMethod: (() -> ())?
     
     func setupContentView() {
         addSubview(infoLabel)
@@ -33,19 +35,34 @@ class HomeInfoView: UIView
         }
     }
     
+    func setupEventResponse() {
+        changeBtn.addTarget(self, action: "changeInfo", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    func changeInfo() {
+        if eventMethod != nil {
+            eventMethod!()
+        }
+    }
+    
     func bindDataWithViewModel(viewModel: HomeInfoViewModel) {
         self.viewModel = viewModel
         
         setupContentView()
         layoutContentView()
+        setupEventResponse()
         
-        backgroundColor = self.viewModel.backgroundColor
+        backgroundColor = self.viewModel!.backgroundColor
         
-        infoLabel.text = self.viewModel.text
-        infoLabel.textColor = self.viewModel.textColor
-        infoLabel.font = self.viewModel.font
+        infoLabel.text = self.viewModel!.text
+        infoLabel.textColor = self.viewModel!.textColor
+        infoLabel.font = self.viewModel!.font
         
-        changeBtn.setTitle(self.viewModel.btnTitle, forState: UIControlState.Normal)
-        changeBtn.backgroundColor = self.viewModel.btnColor
+        changeBtn.setTitle(self.viewModel!.btnTitle, forState: UIControlState.Normal)
+        changeBtn.backgroundColor = self.viewModel!.btnColor
+    }
+    
+    func updateInfoData() {
+        infoLabel.text = viewModel!.text
     }
 }

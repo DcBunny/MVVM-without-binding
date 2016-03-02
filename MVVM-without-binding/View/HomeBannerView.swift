@@ -13,7 +13,7 @@ class HomeBannerView: UIView
     var bannerImage = UIImageView()
     var bannerTitle = UILabel()
     
-    var viewModel = HomeBannerViewModel()
+    var viewModel: HomeBannerViewModel?
     
     func setupContentView() {
         addSubview(bannerImage)
@@ -36,9 +36,9 @@ class HomeBannerView: UIView
         setupContentView()
         layoutContentView()
         
-        bannerImage.image = self.viewModel.image
-        bannerTitle.text = self.viewModel.text
-        bannerTitle.textColor = self.viewModel.textColor
-        bannerTitle.font = self.viewModel.font
+        bannerImage.image = self.viewModel!.image
+        bannerTitle.text = self.viewModel!.text
+        bannerTitle.textColor = self.viewModel!.textColor
+        bannerTitle.font = self.viewModel!.font
     }
 }

@@ -19,11 +19,16 @@ class HomeViewController: UIViewController
     
     var homeDataController = HomeDataController()
     
+    var homeBannerViewModel: HomeBannerViewModel?
+    var homeInfoViewModel: HomeInfoViewModel?
+    var homeListViewModel: HomeListViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupContentView()
         layoutContentView()
+        setupContentViewEvent()
         
         renderSubjectView()
     }
@@ -52,13 +57,21 @@ class HomeViewController: UIViewController
         }
     }
     
-    func renderSubjectView() {
-        let homeBannerViewModel = HomeBannerViewModel() // 实际上应该从Data Controller获取数据
-        homeBannerView.bindDataWithViewModel(homeBannerViewModel)
-        
-        let homeInfoViewModel = HomeInfoViewModel()
-        homeInfoView.bindDataWithViewModel(homeInfoViewModel)
+    func setupContentViewEvent() {
+        homeInfoView.eventMethod = { [unowned self] in
+            self.homeInfoViewModel?.text = self.homeDataController.homeInfoData()
+            self.homeInfoView.updateInfoData()
+        }
     }
     
-    
+    func renderSubjectView() {
+        homeBannerViewModel = HomeBannerViewModel() // 实际上应该从Data Controller获取数据
+        homeBannerView.bindDataWithViewModel(homeBannerViewModel!)
+        
+        homeInfoViewModel = HomeInfoViewModel()
+        homeInfoView.bindDataWithViewModel(homeInfoViewModel!)
+        
+        homeListViewModel = HomeListViewModel()
+        homeListView.bindDataWithViewModel(homeListViewModel!)
+    }
 }

@@ -10,5 +10,11 @@ import Foundation
 
 class HomeDataController
 {
-    
+    func homeInfoData() -> String {
+        var infoString = "I'm info "
+        let infoNum = random()
+        infoString += "\(infoNum)"
+        
+        return infoString
+    }
 }
