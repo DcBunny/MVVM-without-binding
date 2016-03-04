@@ -31,8 +31,5 @@ ViewController 可以向 DataController 请求获取或是操作数据，也可�
 
 DataController 层和 Model 层之间的界限并不是僵硬的，但需要保证每一个 ViewController 都有一个对应的 DataController。Data Controller 更强调的是其作为业务逻辑对外的接口。而在 DataController 中调用更底层的 Model 层逻辑是我们推荐的编程范式，例如数据加工层，网络层，持久层等。
 
-4.Show the code
-GitHub地址：https://github.com/HyperBunny/MVVM-without-binding
-
-5.参考文章：
+4.参考文章：
 http://gracelancy.com/blog/2016/01/06/ape-ios-arch-design/
